@@ -1,0 +1,112 @@
+html {
+    zoom: 70%;
+}
+
+body {
+    background-image: url("./kuvat/itispelinTakaseina.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+p {
+    margin-bottom: -10px;
+}
+
+.canvas {
+    border: 5px solid brown;
+}
+
+.peliContainer {
+    float: right;
+
+}
+
+.dmgIndicator {
+    float: right;
+    margin-right: 10em;
+    font-size: 65px;
+}
+
+.uusiPeli{
+    background-color:yellow;
+    border:none;
+}
+.uusiPeliInfo{
+    font-size:small;
+    color:black;
+    font-weight:800;
+}
+
+.huonetiedot {
+    float: right;
+    margin-right: 20em;
+    font-size: large;
+}
+
+.verho {
+    z-index: 900;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 770px;
+    height: 620px;
+    background-color: black;
+    position: absolute;
+    color:white;
+    text-align: center;
+}
+.verho>p,h1{
+    margin-top: 200px;
+}
+.menu{
+    z-index: 900;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 770px;
+    height: 620px;
+    background-color: black;
+    position: absolute;
+    opacity:0.8;
+}   
+.menu > p,h1{
+    color:white;
+    text-align: center;
+    opacity:1;
+}
+.statuslaatikko{
+    position:absolute;
+    margin-top:110px;
+    margin-left:200px;
+    color:whitesmoke;
+    font-size: x-large;
+    background-color:rgb(240, 240, 240,0.2);
+}
+hr{
+    color:darkred;
+    background-color:darkred;
+    height:5px;
+}
+.dialogiboksi {
+    position: absolute;
+    margin-left: 840px;
+    background-image: url("./kuvat/pinboard.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    border: 10px solid transparent;
+    padding: 15px;
+    border-image: url("./kuvat/dialogiboksitausta.png") 30 stretch;
+    padding: 8px;
+    color: darkred;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.hiddenClass {
+    visibility: hidden;
+}
+.ohjeet{
+    font-size:medium;
+    margin-bottom:5px;
+}
+.kuvaus{
+    font-size:large;
+}
