@@ -56,7 +56,6 @@ module.exports = class Tietovarasto{
     vihollinenElossaFalse(vihollisenId){
         return new Promise(async(resolve,reject)=>{
             try{
-
                 let tulos=this.Omakanta.suoritaKysely(sql.vihollinenElossaFalse,[vihollisenId]);
                 resolve(tulos);
             }catch(err){
