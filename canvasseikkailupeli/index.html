@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="fi">
+
 <head>
     <meta charset="UTF-8">
     <title>Keskiverto päivä Itäkeskuksessa</title>
     <link rel="icon" type="image/x-icon" href="./kuvat/itis.ico">
     <!-- <audio src="*tähän jotain musiikkia koska pitäähän nyt pelissä musiikkia olla*"></audio> -->
 </head>
+
 <body>
     <div class="pelicontainer">
         <div class="verho hiddenClass" id="verho"> <!--häviäminen tuo esiin häviöruudun-->
@@ -14,7 +16,7 @@
             <h3>Lähetä pari työhakemusta</h3>
             <h4>Suksi kuuseen</h4>
             <h5></h5>
-        </div> 
+        </div>
         <div class="menu hiddenClass" id="menu"> <!--pelaaja.pause() tuo esiin menun-->
             <h1>Keskiverto päivä Itäkeskuksessa</h1>
         </div>
@@ -22,13 +24,13 @@
             <h1>Päihitit varkaan!</h1>
         </div>
         <div class="statuslaatikko" id="status"></div>
-        
 
 
-        <div class="dialogiboksi" id="dialogiboksi"><img src="" style="position:absolute;"/>
+
+        <div class="dialogiboksi" id="dialogiboksi"><img src="" style="position:absolute;" />
             <pre id="huoneenNimi"></pre>
             <pre id="huoneenKuvaus" class="kuvaus"></pre>
-            <img src="./kuvat/kartta.png"/>
+            <img src="./kuvat/kartta.png" />
             <hr>
             <div class="ohjeet">
                 Ohjaaminen:
@@ -38,29 +40,30 @@
                 <p>D: Oikealle</p>
                 <p>Enter: Hyökkää</p>
                 <p>Esc: Pause/Unpause</p>
-                <p>R: Rukoile Ylä-Malmin jumalille saadaksesi 15 hp lisää (2€)</p>
-                <p>E: Rukoile Ala-Malmin jumalille saadaksesi nyrkkeihisi lisää voimaa (2€)</p>
+                <p>E: Rukoile Ylä-Malmin jumalille saadaksesi 15 hp lisää (2€)</p>
+                <p>R: Rukoile Ala-Malmin jumalille saadaksesi nyrkkeihisi lisää voimaa (2€)</p>
             </div>
         </div>
-    <canvas id="canvas" class="canvas"></canvas>
+        <canvas id="canvas" class="canvas"></canvas>
 
 
     </div>
-    </body>
+</body>
 
-    <button id="uusiPeli" class="uusiPeli">Aloita uusi peli</button>
-    <p class="uusiPeliInfo">(PELI EI TALLENNU, JOTEN MENETÄT NYKYISEN EDISTYMISESI)</p>
+<button id="uusiPeli" class="uusiPeli">Aloita uusi peli</button>
+<p class="uusiPeliInfo">(PELI EI TALLENNU, JOTEN MENETÄT NYKYISEN EDISTYMISESI)</p>
 
-    <script src="js/Hahmo.js"></script>
-    <script src="js/Seina.js"></script>
-    <!-- Child-classit-->
-    <script src="js/Pelaaja.js"></script>
-    <script src="./js/Vihollinen.js"></script>
-    <script src="./js/NPC.js"></script>
-    <!---->
-    <script src="js/Huonekalu.js"></script>
-    <script src="./js/Esine.js"></script>
-    <script src="js/Ovi.js"></script>
-    <script src="Peli.js"></script>
-    <link rel="stylesheet" href="style.css">
-    </html>
+<script src="js/Hahmo.js"></script>
+<script src="js/Seina.js"></script>
+<!-- Child-classit-->
+<script src="js/Pelaaja.js"></script>
+<script src="./js/Vihollinen.js"></script>
+<script src="./js/NPC.js"></script>
+<!---->
+<script src="js/Huonekalu.js"></script>
+<script src="./js/Esine.js"></script>
+<script src="js/Ovi.js"></script>
+<script src="Peli.js"></script>
+<link rel="stylesheet" href="style.css">
+
+</html>

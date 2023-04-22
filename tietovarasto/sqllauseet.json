@@ -1,9 +1,9 @@
 {
-    "vihollinen":"select * from vihollinen where id=?",
-    "huone":"select * from huone where id=?",
-    "huoneenViholliset":"select * from vihollinen where huone=?",
-    "huoneenOvet":"select * from huone where id=?",
-    "huoneenHuonekalut":"select * from huonekalut where huone=?",
-    "vihollinenElossaFalse":"update vihollinen set elossa=0 where id=?",
-    "kaikkiEloon":"update vihollinen set elossa=true"
+    "vihollinen": "select * from vihollinen where id=?",
+    "huone": "select * from huone where id=?",
+    "huoneenViholliset": "select * from vihollinen where huone=?",
+    "huoneenOvet": "select * from huone where id=?",
+    "huoneenHuonekalut": "select * from huonekalut where huone=?",
+    "vihollinenElossaFalse": "update vihollinen set elossa=0 where id=?",
+    "kaikkiEloon": "update vihollinen set elossa=true"
 }

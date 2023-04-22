@@ -1,11 +1,11 @@
 "use strict";
 
 class Ovi {
-    constructor(ilmansuunta,huoneid) {
+    constructor(ilmansuunta, huoneid) {
         this.ilmansuunta = ilmansuunta;
         this.koord;
         this.leveys = 0;
-        this.huoneid=huoneid;
+        this.huoneid = huoneid;
         this.korkeus;
     }
     piirra() {

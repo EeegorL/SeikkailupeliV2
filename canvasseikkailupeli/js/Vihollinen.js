@@ -2,22 +2,22 @@
 
 
 class Vihollinen extends Hahmo {
-    constructor(id,koord,leveys,korkeus, hp,vari1, vari2, tajuissaan, nimi, dmg, nopeus, kuvasrc) {
-        super(koord, vari1, vari2, tajuissaan, hp, id, nimi,false);//ottaa käyttöön parent-classin
-        this.dmg=dmg;
+    constructor(id, koord, leveys, korkeus, hp, vari1, vari2, tajuissaan, nimi, dmg, nopeus, kuvasrc) {
+        super(koord, vari1, vari2, tajuissaan, hp, id, nimi, false);//ottaa käyttöön parent-classin
+        this.dmg = dmg;
         this.nopeus = nopeus;
         this.kuva = new Image();
-        this.kuva.src = "../kuvat/hahmot/"+kuvasrc ;
+        this.kuva.src = "../kuvat/hahmot/" + kuvasrc;
         this.menosuuntaX;
         this.menosuuntaY;
-        this.kiihtyvyys={x:0,y:0};
-        this.vari1=vari1;
-        this.vari2=vari2;
-        this.alkPerVarit=[vari1,vari2];
-        this.leveys=leveys;
-        this.korkeus=korkeus;
-        this.maxHp=hp;
-        this.isNpc=false;
+        this.kiihtyvyys = { x: 0, y: 0 };
+        this.vari1 = vari1;
+        this.vari2 = vari2;
+        this.alkPerVarit = [vari1, vari2];
+        this.leveys = leveys;
+        this.korkeus = korkeus;
+        this.maxHp = hp;
+        this.isNpc = false;
     }
 
 
@@ -25,13 +25,13 @@ class Vihollinen extends Hahmo {
         super.paivita();
     }
 
-    async lahetaVihollinenTuonelaan(){
-        return new Promise(async(resolve,reject)=>{
-            try{
-                let tulos=await fetch(`vihollinenElossaFalse/${this.id}`,{method:"PUT"});
+    async lahetaVihollinenTuonelaan() {
+        return new Promise(async (resolve, reject) => {
+            try {
+                let tulos = await fetch(`vihollinenElossaFalse/${this.id}`, { method: "PUT" });
                 resolve(tulos);
             }
-            catch(err){
+            catch (err) {
                 reject(err);
             }
         });
@@ -41,7 +41,7 @@ class Vihollinen extends Hahmo {
         this.tarkistaTormaaminen();
         k.beginPath();
         k.fillStyle = "khaki";
-        k.drawImage(this.kuva, this.koord.x, this.koord.y,this.leveys,this.korkeus);
+        k.drawImage(this.kuva, this.koord.x, this.koord.y, this.leveys, this.korkeus);
         k.closePath();
         this.kiihtyvyys.y = 0;
         this.kiihtyvyys.x = 0;
@@ -49,7 +49,7 @@ class Vihollinen extends Hahmo {
         if (this.hp <= 0) {
 
             this.tajuissaan = false;
-            viholliset.length-=1;
+            viholliset.length -= 1;
             pelaaja.lisaaRahaa();
             // await this.lahetaVihollinenTuonelaan();
         }
@@ -84,12 +84,12 @@ class Vihollinen extends Hahmo {
 
         if (Math.abs(Math.round(pelaaja.koord.x) - Math.round(this.koord.x)) < 52 &&
             Math.abs(Math.round(pelaaja.koord.y) - Math.round(this.koord.y)) < 90) {
-                if(this.dmg>pelaaja.dmgRed){ // jos pelaajan dmgRed ei estä kaikkea vahinkoa
-                    pelaaja.hp -= (this.dmg - pelaaja.dmgRed);
-                }
-                else{ // jos estää, niin tekee kuitenkin hieman vahinkoa
-                    pelaaja.hp-=0.1;
-                }
+            if (this.dmg > pelaaja.dmgRed) { // jos pelaajan dmgRed ei estä kaikkea vahinkoa
+                pelaaja.hp -= (this.dmg - pelaaja.dmgRed);
+            }
+            else { // jos estää, niin tekee kuitenkin hieman vahinkoa
+                pelaaja.hp -= 0.1;
+            }
 
         }
     }
@@ -122,66 +122,66 @@ class Vihollinen extends Hahmo {
             for (let huonekalu of huonekalut) {
                 if (!huonekalu.koriste) {
 
-                        const onTormannyt=()=>{
-                            if (this.koord.x + this.leveys > huonekalu.koord.x-5 &&
-                                this.koord.x < huonekalu.koord.x + huonekalu.koko.leveys+5 &&
-                                this.koord.y + this.korkeus > huonekalu.koord.y-5 &&
-                                this.koord.y < huonekalu.koord.y + huonekalu.koko.korkeus+5) {
+                    const onTormannyt = () => {
+                        if (this.koord.x + this.leveys > huonekalu.koord.x - 5 &&
+                            this.koord.x < huonekalu.koord.x + huonekalu.koko.leveys + 5 &&
+                            this.koord.y + this.korkeus > huonekalu.koord.y - 5 &&
+                            this.koord.y < huonekalu.koord.y + huonekalu.koko.korkeus + 5) {
                             return true
-                            }
-                            else return false;
-                        };
-                        const onTormannytX=()=>{
-                            if (this.koord.x + this.leveys > huonekalu.koord.x-5 &&
-                                this.koord.x < huonekalu.koord.x + huonekalu.koko.leveys+5) {
+                        }
+                        else return false;
+                    };
+                    const onTormannytX = () => {
+                        if (this.koord.x + this.leveys > huonekalu.koord.x - 5 &&
+                            this.koord.x < huonekalu.koord.x + huonekalu.koko.leveys + 5) {
                             return true
-                            }
-                            else return false;
-                        };
-                        const onTormannytY=()=>{
-                            if (this.koord.y + this.korkeus > huonekalu.koord.y-5 &&
-                                this.koord.y < huonekalu.koord.y + huonekalu.koko.korkeus+5) {
+                        }
+                        else return false;
+                    };
+                    const onTormannytY = () => {
+                        if (this.koord.y + this.korkeus > huonekalu.koord.y - 5 &&
+                            this.koord.y < huonekalu.koord.y + huonekalu.koko.korkeus + 5) {
                             return true
-                            }
-                            else return false;
-                        };
-                        
+                        }
+                        else return false;
+                    };
 
-                    if(this.menosuuntaX=="oikea"){
-                        if(onTormannyt() && onTormannytX()){
-                            this.koord.x-=this.nopeus;
+
+                    if (this.menosuuntaX == "oikea") {
+                        if (onTormannyt() && onTormannytX()) {
+                            this.koord.x -= this.nopeus;
                         }
                     }
-                    else if(this.menosuuntaX=="vasen"){
-                        if(onTormannyt()&&onTormannytX()){
-                            this.koord.x+=this.nopeus;
+                    else if (this.menosuuntaX == "vasen") {
+                        if (onTormannyt() && onTormannytX()) {
+                            this.koord.x += this.nopeus;
                         }
                     }
-                    if(this.menosuuntaY=="ylos"){
-                        if(onTormannyt()&&onTormannytY()){
-                            this.koord.y+=this.nopeus+1;
-                            if(this.menosuuntaX=="oikea"){
-                                this.koord.x+=this.nopeus;
+                    if (this.menosuuntaY == "ylos") {
+                        if (onTormannyt() && onTormannytY()) {
+                            this.koord.y += this.nopeus + 1;
+                            if (this.menosuuntaX == "oikea") {
+                                this.koord.x += this.nopeus;
                             }
                             else {
-                                this.menosuuntaX="vasen";
-                                this.koord.x-=this.nopeus;
+                                this.menosuuntaX = "vasen";
+                                this.koord.x -= this.nopeus;
                             }
                         }
                     }
-                    else if(this.menosuuntaY=="alas"){
-                        if(onTormannyt()&&onTormannytY()){
-                            this.koord.y-=this.nopeus+1;
-                            if(this.menosuuntaX=="oikea"){
-                                this.koord.x+=this.nopeus;
+                    else if (this.menosuuntaY == "alas") {
+                        if (onTormannyt() && onTormannytY()) {
+                            this.koord.y -= this.nopeus + 1;
+                            if (this.menosuuntaX == "oikea") {
+                                this.koord.x += this.nopeus;
                             }
                             else {
-                                this.menosuuntaX="vasen";
-                                this.koord.x-=this.nopeus;
+                                this.menosuuntaX = "vasen";
+                                this.koord.x -= this.nopeus;
                             }
                         }
                     }
-                    
+
                 }
             }
         }

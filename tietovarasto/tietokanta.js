@@ -23,7 +23,7 @@ module.exports = class Tietokanta {
                     resolve(kyselynTulos);
                 }
                 else {
-                    resolve({muutetutRivitLkm: kyselynTulos.affectedRows});
+                    resolve({ muutetutRivitLkm: kyselynTulos.affectedRows });
                 }
 
             }
@@ -31,7 +31,7 @@ module.exports = class Tietokanta {
                 reject('SQL-virhe' + virhe);
             }
             finally {
-                if(conn){conn.end();};
+                if (conn) { conn.end(); };
             }
 
         });
