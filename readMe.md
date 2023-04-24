@@ -24,4 +24,4 @@
 
 
 Peli:
-https://github.com/EeegorL/Seikkailuprojekti
+https://github.com/EeegorL/SeikkailupeliV2
